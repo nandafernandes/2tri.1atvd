@@ -39,6 +39,16 @@ var perguntas = [
             "Mão de obra barata"
         ]
     }
-]
+];
+
+var posiçaoAtual = 0;
+var perguntaAtual;
+
+mostraPergunta();
+
+function mostraPergunta(){
+    perguntaAtual = perguntas[posiçaoAtual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+}
 
 
