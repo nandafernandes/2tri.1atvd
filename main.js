@@ -1,12 +1,12 @@
-var caixaPrincipal = document.querySelector(".caixa-principal");
-var caixaPerguntas = document.querySelector(".caixa-perguntas");
-var caixaAlternativas = document.querySelector(".caixa-alternativas");
-var caixaResultado = document.querySelector(".caixa-resultado");
-var textoResultado = document.querySelector(".texto-resultado");
+var cxPrincipal = document.querySelector(".cx-principal");
+var cxPerguntas = document.querySelector(".cx-perguntas");
+var cxAlternativas = document.querySelector(".cx-alternativas");
+var cxResultado = document.querySelector(".cx-resultado");
+var txResultado = document.querySelector(".tx-resultado");
 var perguntas = [
     {
         enunciado: "A IA pode automatizar tarefas repetitivas.",
-        alternativas: [
+        alternativas: [    
             "Vai eliminar tarefas monotonas",
             "Vai tirar muitos empregos"
         ]
@@ -28,6 +28,7 @@ var perguntas = [
     {
         enunciado: "A IA pode ajudar a prever tendências de mercado.",
         alternativas: [
+           
             "Incrível",
             "Sinistro"
         ]
@@ -41,23 +42,21 @@ var perguntas = [
     }
 ];
 
-var posiçaoAtual = 0;
+var posiçãoAtual = 0;
 var perguntaAtual;
 
 mostraPergunta();
 
 function mostraPergunta(){
-    perguntaAtual = perguntas[posiçaoAtual];
-    caixaPerguntas.textContent = perguntaAtual.enunciado;
+    perguntaAtual = perguntas[posiçãoAtual];
+    cxPerguntas.textContent = perguntaAtual.enunciado;
     mostraAlternativas();
 }
 
-function mostraAlternativas(){
-    for (varalternativa of perguntaAtual.alternativas){
+function mostraAlternativas() {
+    for (var alternativa of perguntaAtual.alternativas) {
         var botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa;
-        caixaAlternativas.appendChild(botaoAlternativas);
+        cxAlternativas.appendChild(botaoAlternativas);
     }
 }
-
-
